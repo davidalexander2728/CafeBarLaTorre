@@ -557,7 +557,17 @@
         <p class="section-sub" style="margin:0;">Confirmación inmediata por WhatsApp. Sencillo y rápido.</p>
       </div>
 
-      <div id="reservasFormWrap" style="margin-top:2rem;">
+      <!-- Tabs comida / cena -->
+      <div class="reservas-tabs" role="tablist" aria-label="Tipo de reserva">
+        <button type="button" class="reservas-tab active" id="tabComida" role="tab" aria-selected="true" aria-controls="reservasFormWrap" data-turno="comida">
+          🌿 Reservar Comida
+        </button>
+        <button type="button" class="reservas-tab" id="tabCena" role="tab" aria-selected="false" aria-controls="reservasFormWrap" data-turno="cena">
+          🌙 Reservar Cena
+        </button>
+      </div>
+
+      <div id="reservasFormWrap" style="margin-top:1.5rem;">
         <form class="reservas-form" id="reservaFormEl" novalidate>
 
           <!-- Nombre -->

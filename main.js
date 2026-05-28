@@ -307,52 +307,45 @@
     var todayStr = yy + "-" + mm + "-" + dd;
     if (fechaInput) { fechaInput.min = todayStr; fechaInput.value = todayStr; }
 
-    /* Time slots — only Almuerzo (12:00–16:30) and Cena (20:00–22:30) */
-    var SLOT_GROUPS = [
-      {
-        label: "🌿 Almuerzo",
-        slots: ["12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30"]
-      },
-      {
-        label: "🌙 Cena",
-        slots: ["20:00","20:30","21:00","21:30","22:00","22:30"]
-      }
-    ];
+    /* Time slots by turno */
+    var TURNO_SLOTS = {
+      comida: ["12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30"],
+      cena:   ["20:00","20:30","21:00","21:30","22:00","22:30"]
+    };
+    var activeTurno = "comida";
+
+    /* Tab switching */
+    var tabComida = document.getElementById("tabComida");
+    var tabCena   = document.getElementById("tabCena");
+    function setTurno(turno) {
+      activeTurno = turno;
+      if (tabComida) { tabComida.classList.toggle("active", turno === "comida"); tabComida.setAttribute("aria-selected", turno === "comida"); }
+      if (tabCena)   { tabCena.classList.toggle("active",   turno === "cena");   tabCena.setAttribute("aria-selected",   turno === "cena"); }
+      if (horaInput) horaInput.value = "";
+      renderSlots();
+    }
+    if (tabComida) tabComida.addEventListener("click", function () { setTurno("comida"); });
+    if (tabCena)   tabCena.addEventListener("click",   function () { setTurno("cena"); });
 
     function renderSlots() {
       if (!slotsWrap) return;
       slotsWrap.innerHTML = "";
-      SLOT_GROUPS.forEach(function (group) {
-        /* Group label */
-        var lbl = document.createElement("div");
-        lbl.className   = "rform-slot-group";
-        var lblTitle = document.createElement("div");
-        lblTitle.className = "rform-slot-group-lbl";
-        lblTitle.textContent = group.label;
-        lbl.appendChild(lblTitle);
-
-        var pillsWrap = document.createElement("div");
-        pillsWrap.className = "rform-slots";
-
-        group.slots.forEach(function (time) {
-          var btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = "slot-pill";
-          btn.textContent = time;
-          btn.addEventListener("click", function () {
-            slotsWrap.querySelectorAll(".slot-pill").forEach(function (p) {
-              p.classList.remove("active");
-              p.setAttribute("aria-pressed", "false");
-            });
-            btn.classList.add("active");
-            btn.setAttribute("aria-pressed", "true");
-            if (horaInput) horaInput.value = time;
+      var slots = TURNO_SLOTS[activeTurno] || [];
+      slots.forEach(function (time) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "slot-pill";
+        btn.textContent = time;
+        btn.addEventListener("click", function () {
+          slotsWrap.querySelectorAll(".slot-pill").forEach(function (p) {
+            p.classList.remove("active");
+            p.setAttribute("aria-pressed", "false");
           });
-          pillsWrap.appendChild(btn);
+          btn.classList.add("active");
+          btn.setAttribute("aria-pressed", "true");
+          if (horaInput) horaInput.value = time;
         });
-
-        lbl.appendChild(pillsWrap);
-        slotsWrap.appendChild(lbl);
+        slotsWrap.appendChild(btn);
       });
     }
     renderSlots();
@@ -403,10 +396,12 @@
       var notasTxt = notasEl && notasEl.value.trim()
         ? "\n📝 Notas: " + notasEl.value.trim() : "";
 
+      var turnoLabel = activeTurno === "cena" ? "Cena" : "Comida";
       var msg = "Hola, quiero reservar una mesa en La Torre 🍽️"
-        + "\n\n👤 Nombre: " + nombre
-        + "\n📅 Fecha: "    + fechaStr
-        + "\n🕐 Hora: "     + hora
+        + "\n\n🍽️ Turno: "  + turnoLabel
+        + "\n👤 Nombre: "  + nombre
+        + "\n📅 Fecha: "   + fechaStr
+        + "\n🕐 Hora: "    + hora
         + "\n👥 Personas: " + personas
         + notasTxt + "\n\n¡Gracias!";
 
@@ -429,9 +424,7 @@
         if (horaInput)  horaInput.value  = "";
         if (errorEl)    errorEl.textContent = "";
         personas = 2; updateCounter();
-        slotsWrap.querySelectorAll(".slot-pill").forEach(function (p) {
-          p.classList.remove("active"); p.setAttribute("aria-pressed","false");
-        });
+        renderSlots();
         var section = document.getElementById("reservas");
         if (section) window.scrollTo({
           top: section.getBoundingClientRect().top + window.scrollY - 80,
