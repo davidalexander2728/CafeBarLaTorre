@@ -1,0 +1,112 @@
+{
+  "hero-desayuno": {
+    "src": "assets/img/hero-desayuno.jpg",
+    "title": "European style thick hot chocolate - Demitri's Feast AUD3.80",
+    "creator": "avlxyz",
+    "creator_url": "https://www.flickr.com/photos/10559879@N00",
+    "license": "by-sa",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/10559879@N00/4804266317",
+    "source": "flickr"
+  },
+  "hero-comida": {
+    "src": "assets/img/hero-comida.jpg",
+    "title": "paella",
+    "creator": "jenny downing",
+    "creator_url": "https://www.flickr.com/photos/7941044@N06",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/7941044@N06/2332123303",
+    "source": "flickr"
+  },
+  "hero-merienda": {
+    "src": "assets/img/hero-merienda.jpg",
+    "title": "R. Stephens Tasmanian Leatherwood Honey - price - A1 Bakery, Dandenong AUD5.95 500g",
+    "creator": "avlxyz",
+    "creator_url": "https://www.flickr.com/photos/10559879@N00",
+    "license": "by-nc-sa",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/10559879@N00/5332472576",
+    "source": "flickr"
+  },
+  "hero-cena": {
+    "src": "assets/img/hero-cena.jpg",
+    "title": "IMG_0831",
+    "creator": "ConstantinWied",
+    "creator_url": "https://www.flickr.com/photos/99664461@N04",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/99664461@N04/25634660722",
+    "source": "flickr"
+  },
+  "foto-tostada": {
+    "src": "assets/img/foto-tostada.jpg",
+    "title": "Liat Portal for Foodie Disorder - Israeli breakfast with scrambled eggs, avocado and tomato salad",
+    "creator": "HaJunkiyada",
+    "creator_url": "https://commons.wikimedia.org/w/index.php?title=User:HaJunkiyada&action=edit&redlink=1",
+    "license": "by-sa",
+    "license_version": "4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "foreign_landing_url": "https://commons.wikimedia.org/w/index.php?curid=180744111",
+    "source": "wikimedia"
+  },
+  "foto-tapas": {
+    "src": "assets/img/foto-tapas.jpg",
+    "title": "Plate of Cured Meats, B44 Restaurant, San Francisco",
+    "creator": "yuichi.sakuraba",
+    "creator_url": "https://www.flickr.com/photos/57085156@N00",
+    "license": "by-nc",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/57085156@N00/23983878265",
+    "source": "flickr"
+  },
+  "foto-carne": {
+    "src": "assets/img/foto-carne.jpg",
+    "title": "きたよ！うしし",
+    "creator": "yto",
+    "creator_url": "https://www.flickr.com/photos/27983255@N00",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/27983255@N00/4561850945",
+    "source": "flickr"
+  },
+  "foto-pastel": {
+    "src": "assets/img/foto-pastel.jpg",
+    "title": "Sweets, Coffee & Tea Menu - Jones The Grocer, Chadstone",
+    "creator": "avlxyz",
+    "creator_url": "https://www.flickr.com/photos/10559879@N00",
+    "license": "by-sa",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/10559879@N00/3105997583",
+    "source": "flickr"
+  },
+  "hero-local": {
+    "src": "assets/img/hero-local.jpg",
+    "title": "Subway Cafe Interior 5",
+    "creator": "Random Retail",
+    "creator_url": "https://www.flickr.com/photos/67408512@N03",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/67408512@N03/11531735184",
+    "source": "flickr"
+  },
+  "hero-bar": {
+    "src": "assets/img/hero-bar.jpg",
+    "title": "Restaurant/Bar 3",
+    "creator": "noahjeppson",
+    "creator_url": "https://www.flickr.com/photos/38795277@N05",
+    "license": "by-sa",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/38795277@N05/5587440431",
+    "source": "flickr"
+  }
+}
